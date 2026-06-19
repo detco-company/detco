@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <!-- High-fidelity Kataline Logo Vector -->
+  <g transform="translate(10, 5)">
+    <!-- Stylized Grid "K" Symbol -->
+    <rect x="12" y="14" width="32" height="32" rx="4" fill="#0056B3"/>
+    <path d="M22 20 V40 M34 20 L24 30 L34 40" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Typography -->
+    <text x="56" y="32" font-family="'Plus Jakarta Sans', 'Inter', sans-serif" font-size="20" font-weight="800" fill="#0F172A" letter-spacing="-0.5">Kataline</text>
+    <text x="56" y="44" font-family="'Inter', sans-serif" font-size="8.5" font-weight="700" fill="#0056B3" letter-spacing="1">TRAFFIC MARKING SOLUTIONS</text>
+  </g>
+</svg>

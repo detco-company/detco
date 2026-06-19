@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <!-- High-fidelity Eurobond Logo Vector -->
+  <g transform="translate(10, 5)">
+    <!-- Elegant E Symbol Grid -->
+    <rect x="15" y="12" width="36" height="36" rx="4" fill="#0F172A"/>
+    <path d="M25 22 H41 M25 30 H37 M25 38 H41" stroke="#FFFFFF" stroke-width="4.5" stroke-linecap="round"/>
+    <!-- Premium Typography -->
+    <text x="64" y="32" font-family="'Plus Jakarta Sans', 'Inter', sans-serif" font-size="20" font-weight="800" fill="#0F172A" letter-spacing="0.5">EUROBOND</text>
+    <text x="64" y="44" font-family="'Inter', sans-serif" font-size="8.5" font-weight="700" fill="#DC2626" letter-spacing="1">ALUMINIUM COMPOSITE PANELS</text>
+  </g>
+</svg>

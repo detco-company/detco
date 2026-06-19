@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Optimization -->
+  <title>B2B Product Details | Deepak Trading Corporation</title>
+  <meta name="description" content="Get comprehensive B2B specifications, minimum order quantities (MOQ), certified road/traffic safety standards, and request bulk price quotations directly.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FF5E00'%3E%3Cpath d='M12 2L1 21h22L12 2zm0 4l7.5 13h-15L12 6zm-1 8h2v2h-2v-2zm0-4h2v3h-2v-3z'/%3E%3C/svg%3E">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css?v=38.0">
+  
+  <style>
+    /* Removed widget layout overrides to allow centered modal */
+    .chat-header {
+      background-color: var(--color-primary); /* Slate Black #0F172A */
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #FFFFFF;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      z-index: 10;
+    }
+    .chat-header-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .chat-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      border: 1.5px solid #FFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .chat-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .chat-header-info {
+      display: flex;
+      flex-direction: column;
+    }
+    .chat-header-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin: 0;
+      line-height: 1.25;
+      text-align: left;
+    }
+    .chat-header-subtitle {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.8);
+      margin-top: 1px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .chat-header-subtitle::before {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: #10B981; /* Premium Active Green */
+      border-radius: 50%;
+    }
+    .chat-btn-close {
+      background: none;
+      border: none;
+      color: #FFFFFF;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.8;
+      transition: 0.2s;
+    }
+    .chat-btn-close:hover {
+      opacity: 1;
+      transform: scale(1.08);
+    }
+    .chat-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      scroll-behavior: smooth;
+      background-color: var(--color-primary-light); /* Crisp white/slate background */
+      background-image: none !important;
+    }
+    .chat-bubble {
+      max-width: 85%;
+      padding: 10px 14px;
+      font-size: 0.84rem;
+      line-height: 1.4;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      position: relative;
+      animation: bubbleReveal 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .chat-bubble.bot {
+      background: #FFFFFF;
+      color: var(--text-dark);
+      border-radius: 8px 8px 8px 0px;
+      align-self: flex-start;
+      border: 1px solid var(--color-border-grid);
+    }
+    .chat-bubble.user {
+      background: var(--color-primary); /* Slate Black matching B2B theme */
+      color: #FFFFFF;
+      border-radius: 8px 8px 0px 8px;
+      align-self: flex-end;
+      border: none;
+    }
+    .chat-bubble-time {
+      font-size: 0.62rem;
+      color: var(--text-light);
+      text-align: right;
+      margin-top: 4px;
+      display: block;
+      font-weight: 500;
+    }
+    .chat-bubble.user .chat-bubble-time {
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .chat-footer {
+      background: #FFFFFF;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-top: 1px solid var(--color-border-grid);
+    }
+    .chat-input-wrapper {
+      background: var(--color-primary-light);
+      border-radius: 20px;
+      padding: 4px 14px;
+      display: flex;
+      align-items: center;
+      flex: 1;
+      border: 1px solid var(--color-border-grid);
+    }
+    .chat-input {
+      border: none;
+      outline: none;
+      background: none;
+      flex: 1;
+      font-size: 0.84rem;
+      color: var(--text-dark);
+      padding: 4px 0;
+      box-shadow: none !important;
+      height: auto !important;
+    }
+    .chat-input::placeholder {
+      color: var(--text-light);
+    }
+    .chat-unit-label {
+      font-size: 0.8rem;
+      color: var(--text-medium);
+      font-weight: 700;
+      padding-left: 8px;
+      border-left: 1px solid var(--color-border-grid);
+    }
+    .chat-send-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--color-accent); /* Safety Red button */
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      transition: all 0.2s ease;
+      padding: 0;
+    }
+    .chat-send-btn:hover {
+      background: var(--color-accent-hover);
+      transform: scale(1.05);
+    }
+    .chat-send-btn:active {
+      transform: scale(0.95);
+    }
+
+    /* Premium B2B Product Details Page Styles */
+    .product-detail-section {
+      padding: 120px 0 60px 0;
+      background-color: var(--color-bg-white);
+    }
+    
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 45% 55%;
+      border: 1px solid var(--color-border-grid);
+      background-color: var(--color-bg-white);
+      margin-bottom: 40px;
+    }
+    
+    .detail-visual-col {
+      padding: 40px;
+      border-right: 1px solid var(--color-border-grid);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      background-color: var(--color-primary-light);
+      position: relative;
+    }
+    
+    .detail-image-box {
+      width: 100%;
+      height: 380px;
+      border: 1px solid var(--color-border-grid);
+      background-color: var(--color-bg-white);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin-bottom: 24px;
+      cursor: pointer;
+    }
+    
+    .detail-image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 16px;
+      box-sizing: border-box;
+      transition: transform 0.15s ease-out, transform-origin 0.15s ease-out;
+    }
+    
+    .detail-info-col {
+      padding: 50px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    
+    .detail-category {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+    .detail-category a {
+      color: inherit;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+    .detail-category a:hover {
+      text-decoration: underline;
+    }
+    
+    .detail-title {
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      line-height: 1.25;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+    
+    .detail-desc {
+      font-size: 0.9rem;
+      color: var(--text-medium);
+      line-height: 1.55;
+      margin-bottom: 30px;
+    }
+    
+    .detail-moq-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--color-accent-soft);
+      border: 1px solid rgba(255, 94, 0, 0.15);
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      color: var(--color-accent);
+      font-size: 0.85rem;
+      font-weight: 800;
+      width: fit-content;
+      margin-bottom: 30px;
+    }
+    
+    .detail-specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 40px;
+    }
+    
+    .detail-specs-table tr {
+      border-bottom: 1px solid var(--color-border-grid);
+    }
+    
+    .detail-specs-table tr:last-child {
+      border-bottom: none;
+    }
+    
+    .detail-specs-table td {
+      padding: 12px 0;
+      font-size: 0.88rem;
+    }
+    
+    .detail-specs-label {
+      color: var(--text-light);
+      font-weight: 700;
+      width: 40%;
+    }
+    
+    .detail-specs-val {
+      color: var(--text-dark);
+      font-weight: 800;
+      text-align: right;
+    }
+    
+    .where-to-use-box {
+      border: 1px solid var(--color-border-grid);
+      background-color: var(--color-primary-light);
+      padding: 40px;
+      margin-bottom: 60px;
+      border-radius: var(--radius-sm);
+    }
+    
+    .where-to-use-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .where-to-use-desc {
+      font-size: 0.9rem;
+      color: var(--text-medium);
+      line-height: 1.6;
+    }
+    
+    /* Related Products Grid spacing */
+    .related-products-section {
+      margin-top: 60px;
+      border-top: 1.5px solid var(--color-border-grid);
+      padding-top: 50px;
+    }
+
+    /* You May Also Like Suggestion Cards */
+    .suggestions-section {
+      margin-top: 64px;
+      padding-top: 50px;
+      border-top: 1.5px solid var(--color-border-grid);
+    }
+    .suggestions-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+    .suggestions-label {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--color-accent);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+    .suggestions-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      line-height: 1.25;
+      letter-spacing: -0.4px;
+    }
+    .suggestions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 900px) {
+      .suggestions-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 580px) {
+      .suggestions-grid { grid-template-columns: 1fr; }
+    }
+    .suggestion-card {
+      border: 1px solid var(--color-border-grid);
+      background: var(--color-bg-white);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.22s ease, border-color 0.22s ease;
+      cursor: pointer;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+    }
+    .suggestion-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 32px rgba(15,23,42,0.1);
+      border-color: var(--color-accent);
+    }
+    .suggestion-card-img {
+      width: 100%;
+      height: 190px;
+      object-fit: contain;
+      background: #ffffff;
+      display: block;
+      border-bottom: 1px solid var(--color-border-grid);
+      transition: transform 0.4s ease;
+      padding: 12px;
+      box-sizing: border-box;
+    }
+    .suggestion-card:hover .suggestion-card-img {
+      transform: scale(1.04);
+    }
+    .suggestion-card-body {
+      padding: 20px 20px 22px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .suggestion-card-brand {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+    .suggestion-card-name {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      line-height: 1.35;
+      margin-bottom: 10px;
+      flex: 1;
+    }
+    .suggestion-card-spec {
+      font-size: 0.8rem;
+      color: var(--text-medium);
+      margin-bottom: 16px;
+      line-height: 1.45;
+    }
+    .suggestion-card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--color-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: gap 0.2s ease;
+    }
+    .suggestion-card:hover .suggestion-card-cta {
+      gap: 10px;
+    }
+    
+    /* Zoom Lightbox Container */
+    .zoom-lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(20px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 50000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+    
+    .zoom-lightbox.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    
+    .zoom-lightbox-content {
+      position: relative;
+      max-width: 90vw;
+      max-height: 85vh;
+      transform: scale(0.9);
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    
+    .zoom-lightbox.active .zoom-lightbox-content {
+      transform: scale(1);
+    }
+    
+    /* Page Error Card */
+    .error-card {
+      text-align: center;
+      padding: 80px 40px;
+      border: 1px solid var(--color-border-grid);
+      background-color: var(--color-bg-white);
+      border-radius: var(--radius-md);
+      max-width: 500px;
+      margin: 40px auto;
+    }
+
+    @media (max-width: 992px) {
+      .detail-grid {
+        grid-template-columns: 1fr;
+      }
+      .detail-visual-col {
+        border-right: none;
+        border-bottom: 1px solid var(--color-border-grid);
+        padding: 30px;
+      }
+      .detail-info-col {
+        padding: 40px 30px;
+      }
+    }
+
+    /* B2B Typing Indicator */
+    .typing-indicator {
+      display: flex !important;
+      align-items: center;
+      gap: 4px;
+      padding: 10px 14px !important;
+      width: fit-content;
+      min-width: 50px;
+    }
+    .typing-indicator .dot {
+      width: 6px;
+      height: 6px;
+      background: #94A3B8; /* Muted corporate grey */
+      border-radius: 50%;
+      display: inline-block;
+      animation: bounce 1.3s linear infinite;
+    }
+    .typing-indicator .dot:nth-child(2) { animation-delay: -1.1s; }
+    .typing-indicator .dot:nth-child(3) { animation-delay: -0.9s; }
+    @keyframes bounce {
+      0%, 60%, 100% { transform: translateY(0); }
+      30% { transform: translateY(-5px); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. Sticky Navigation Header -->
+  <header class="main-header" id="mainHeader">
+    <div class="container">
+      <div class="nav-container">
+        
+        <!-- Logo Brand Section -->
+        <a href="index.html" class="logo" aria-label="Deepak Trading Corp Home" style="display: flex; align-items: center; gap: 10px;">
+          <img src="assets/detco_logo.png" alt="DETCO Logo" class="logo-brand-img" style="height: 40px; width: 40px; object-fit: contain;">
+          <span class="logo-text" style="font-weight: 800; letter-spacing: -0.2px;">DEEPAK TRADING CORPORATION</span>
+        </a>
+
+        <!-- Desktop Navigation links -->
+        <nav class="nav-links" id="navLinks">
+          <div class="nav-dropdown-wrapper">
+            <a href="catalog.html" class="nav-dropdown-trigger" id="productsNavLink">
+              Products
+              <svg class="dropdown-caret" viewBox="0 0 20 20" fill="currentColor" style="width: 14px; height: 14px; transition: transform 0.25s ease; margin-left: 2px;">
+                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+            <div class="nav-dropdown-menu">
+              <a href="catalog.html?category=road-studs">Road Studs</a>
+              <a href="catalog.html?category=reflective-tapes">Reflective Tapes</a>
+              <a href="catalog.html?category=marking-paint">Road Paint</a>
+              <a href="catalog.html?category=traffic-cones">Traffic Cones</a>
+              <a href="catalog.html?category=speed-breakers">Speed Breakers</a>
+              <a href="catalog.html?category=sign-boards">Sign Boards</a>
+            </div>
+          </div>
+          <a href="detco.html" style="font-weight: 800; color: var(--color-accent);">DETCO Products</a>
+          <a href="index.html#statsSection">Our Legacy</a>
+          <a href="index.html#aboutSection">Why Us</a>
+          <a href="tel:+917718873198" style="display: flex; align-items: center; gap: 6px; font-weight: 700; color: var(--color-accent);">
+            <svg style="width: 16px; height: 16px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            +91 77188 73198
+          </a>
+          <button class="btn btn-primary" id="requestQuoteNav" onclick="window.location.href='index.html#quoteSection'">Request Quote</button>
+        </nav>
+
+        <!-- Hamburger Toggle -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation Drawer">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. Dynamic Product Detail Main -->
+  <main class="product-detail-section">
+    <div class="container" id="pageContainer">
+      
+      <!-- Back button at the very top of the container -->
+      <div style="margin-bottom: 30px; display: flex;">
+        <button onclick="if (document.referrer && document.referrer.indexOf(window.location.host) !== -1) { history.back(); } else { window.location.href='catalog.html'; }" class="btn btn-primary">
+          ◀ Back
+        </button>
+      </div>
+
+      <!-- Loaded dynamically via JavaScript to ensure ZERO blank layouts -->
+      <div id="dynamicContentWrap">
+        <div style="text-align: center; padding: 100px 0;">
+          <div class="success-icon-wrap" style="border-color: var(--color-accent); color: var(--color-accent); background: none; width: 44px; height: 44px; margin: 0 auto 20px auto; animation: float 2s infinite;">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H18.5" /></svg>
+          </div>
+          <span style="font-size: 0.95rem; font-weight: 700; color: var(--text-light);">Assembling certified B2B product dynamic dataset...</span>
+        </div>
+      </div>
+      
+    </div>
+  </main>
+
+  <!-- 3. Dynamic Zoom Lightbox Overlay -->
+  <div class="zoom-lightbox" id="zoomLightbox" aria-hidden="true" onclick="closeZoomLightbox()">
+    <div class="zoom-lightbox-content" onclick="event.stopPropagation()">
+      <img id="zoomLightboxImg" src="" alt="Expanded Specifications View" style="max-width: 90vw; max-height: 85vh; border-radius: var(--radius-sm); border: 2.5px solid var(--color-accent); box-shadow: var(--shadow-heavy); object-fit: contain;">
+      <button class="specs-close-btn" onclick="closeZoomLightbox()" style="position: absolute; top: -45px; right: 0; color: #FFFFFF; font-size: 32px; background: none; border: none; cursor: pointer;">&times;</button>
+    </div>
+  </div>
+
+  <!-- 4. Global B2B Inquiry Overlay Success Modal (Web3Forms SLA) -->
+  <div class="modal-overlay" id="enquiryModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-container">
+      
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <img src="assets/detco_logo.png" alt="DETCO Logo" style="height: 44px; width: 44px; object-fit: contain;">
+          <div class="modal-title-wrap">
+            <h2 class="modal-title" id="modalTitle">Get Custom B2B Quotation</h2>
+            <span class="modal-header-desc">Deepak Trading Corporation · Volume Pricing</span>
+          </div>
+        </div>
+        <button class="btn-close-modal" id="closeModal" aria-label="Close modal">
+          <svg style="width: 20px; height: 20px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body">
+        
+        <!-- B2B Enquiry Form -->
+        <form class="enquiry-form" id="enquiryForm" autocomplete="on">
+          <!-- Web3Forms Access Key Integration -->
+          <input type="hidden" name="access_key" value="2f4a5fe1-5ec6-40ec-ab6a-6cfdacc71616">
+          
+          <!-- Full Name -->
+          <div class="form-group">
+            <label for="fullName">Full Name <span class="required">*</span></label>
+            <input type="text" id="fullName" name="name" required placeholder="e.g. Rajesh Kumar" autocomplete="name">
+          </div>
+
+          <!-- Company Details & Optional GSTIN -->
+          <div class="form-row-double">
+            <div class="form-group">
+              <label for="companyName">Company / Firm Name <span class="required">*</span></label>
+              <input type="text" id="companyName" name="company" required placeholder="e.g. Apex Road Developers Ltd" autocomplete="organization">
+            </div>
+            <div class="form-group">
+              <label for="gstinNum">GSTIN <span class="gstin-note">(Optional)</span></label>
+              <input type="text" id="gstinNum" name="gstin" placeholder="e.g. 27AAAED1024F1Z3" pattern="^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$" title="Enter valid GSTIN format (15 characters)">
+            </div>
+          </div>
+
+          <!-- Contact Details -->
+          <div class="form-row-double">
+            <div class="form-group">
+              <label for="phoneNum">Phone Number <span class="required">*</span></label>
+              <input type="tel" id="phoneNum" name="Contact Number" required placeholder="+91 98765 43210" autocomplete="tel">
+            </div>
+            <div class="form-group">
+              <label for="emailAddr">Email Address <span class="required">*</span></label>
+              <input type="email" id="emailAddr" name="email" required placeholder="rkumar@apexroad.com" autocomplete="email">
+            </div>
+          </div>
+
+          <!-- Product Picker & Quantity Range -->
+          <div class="form-row-double">
+            <div class="form-group">
+              <label for="prodCategory">Product Category <span class="required">*</span></label>
+              <select id="prodCategory" name="product_category" required>
+                <option value="" disabled selected>Select Category</option>
+                <option value="road-studs">Road Studs</option>
+                <option value="reflective-tapes">Reflective Tapes</option>
+                <option value="marking-paint">Road Paint</option>
+                <option value="traffic-cones">Traffic Cones</option>
+                <option value="speed-breakers">Speed Breakers</option>
+                <option value="sign-boards">Sign Boards</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="estQty">Estimated Quantity Needed <span class="required">*</span></label>
+              <input type="number" id="estQty" name="quantity" required min="1" placeholder="e.g. 250">
+            </div>
+          </div>
+
+          <!-- Requirements Text -->
+          <div class="form-group">
+            <label for="requirements">Message / Requirements Specification <span class="required">*</span></label>
+            <textarea id="requirements" name="requirements" required placeholder="Details about site dimensions, reflectivity standards (e.g. HIP/Diamond Grade), custom layout requests or shipping location..."></textarea>
+          </div>
+
+          <!-- CTA Submission -->
+          <div class="submit-btn-wrap">
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; font-size: 1.05rem;">
+              Submit Request for Bulk Pricing
+            </button>
+          </div>
+
+        </form>
+
+        <!-- Thank You Success Panel (Shown after submit) -->
+        <div class="success-panel" id="successPanel">
+          <div class="success-icon-wrap">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          
+          <h3 class="success-title">Quotation Request Logged!</h3>
+          <p class="success-msg">
+            Thank you, <span id="successClientText" style="font-weight: 700;">Client</span>. Your bulk quotation inquiry has been verified and registered into our trade routing system.
+          </p>
+
+          <div class="success-meta-box">
+            <div class="success-meta-row">
+              <span class="success-meta-label">RFQ Reference ID</span>
+              <span class="success-meta-value" id="refNumberText">RFQ-4502-2026</span>
+            </div>
+            <div class="success-meta-row">
+              <span class="success-meta-label">Registered Enterprise</span>
+              <span class="success-meta-value" id="successCompanyText">Enterprise Ltd</span>
+            </div>
+            <div class="success-meta-row">
+              <span class="success-meta-label">Bulk Target Items</span>
+              <span class="success-meta-value" id="successQtyText">300 Cones</span>
+            </div>
+            <div class="success-meta-timer" id="successSlaText">
+              Guaranteed pricing SLA callback within 24 Hours.
+            </div>
+          </div>
+          
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 5. B2B Multi-Column Footer with Corporate Details -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <div class="footer-col">
+          <a href="index.html" class="logo" style="margin-bottom: 8px; display: inline-block;">
+            <span class="logo-text" style="color: var(--text-white); font-weight: 800; letter-spacing: -0.2px;">DEEPAK TRADING CORPORATION</span>
+          </a>
+          <p class="footer-logo-desc">
+            Providing high-reflectivity highway marking films, traffic barriers, solar studs, and smart traffic equipment. India's certified choice for highway developers and building developers.
+          </p>
+          <div style="margin-top: 10px; display: flex; flex-direction: column; gap: 6px; font-size: 0.8rem;">
+            <span><strong>GSTIN:</strong> 27AAAED1024F1Z3 (Verified Distributor)</span>
+            <span><strong>ISO Status:</strong> ISO 9001:2015 Certified</span>
+          </div>
+          <div class="footer-social-links">
+            <a href="https://www.linkedin.com/company/deepak-trading-corporation" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn">
+              <svg style="width: 18px; height: 18px; fill: currentColor;" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="https://wa.me/917718873198" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="WhatsApp">
+              <svg style="width: 18px; height: 18px; fill: currentColor;" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 11.996.01c3.2 0 6.2 1.242 8.461 3.507 2.26 2.265 3.5 5.27 3.5 8.474 0 6.59-5.337 11.93-11.938 11.93-2.001 0-3.971-.5-5.728-1.455L0 24zm6.59-4.846c1.6.95 3.1 1.45 4.7 1.45 5.4 0 9.8-4.39 9.8-9.8 0-2.6-1-5.1-2.9-6.9C16.4 2 13.9.9 11.3.9 5.9.9 1.5 5.29 1.5 10.7c0 1.7.4 3.3 1.3 4.8l-1 3.6 3.8-1zM17.5 14.8c-.3-.1-1.7-.8-2-1-.3-.1-.5-.1-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.4-2.2-1.4-.8-.7-1.3-1.6-1.5-1.9-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.7-1-2.4-.3-.7-.6-.6-.8-.6H8.2c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7 0 1.6 1.2 3.1 1.3 3.3.2.2 2.3 3.5 5.6 4.9.8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.7-.1 1.7-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Product Categories</h4>
+          <div class="footer-links">
+            <a href="catalog.html?category=road-studs">Road Studs</a>
+            <a href="catalog.html?category=reflective-tapes">Reflective Tapes</a>
+            <a href="catalog.html?category=traffic-cones">Traffic Cones</a>
+            <a href="catalog.html?category=sign-boards">Sign Boards</a>
+            <a href="catalog.html?category=speed-breakers">Speed Breakers</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html#statsSection">Corporate Legacy</a>
+            <a href="index.html#aboutSection">Why Choose Us</a>
+            <a href="catalog.html">Request Bulk Quote</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="#">Terms of Trading</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Corporate Headquarters</h4>
+          <div class="footer-links">
+            <div class="footer-contact-item">
+              <svg class="footer-contact-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span>DETCO, Gala No. 10 & 11, Perfect Industrial Estate, Near Tungar Phata, Sativali, Tal. Vasai, Dist. Palghar, Maharashtra 401208</span>
+            </div>
+            <div class="footer-contact-item">
+              <svg class="footer-contact-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              <span>+91 77188 73198</span>
+            </div>
+            <div class="footer-contact-item">
+              <svg class="footer-contact-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <span>deepaktradingcorporation@gmail.com</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copyright">&copy; 2026 Deepak Trading Corporation. All Rights Reserved. Coordinated by safety desk divisions.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dynamic Logic Scripts -->
+  <script src="js/products.js?v=46.0"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // 2. Mobile Hamburg Navigation Toggle
+      const menuToggle = document.getElementById('menuToggle');
+      const navLinks = document.getElementById('navLinks');
+      
+      if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('drawer-active');
+          const spans = menuToggle.querySelectorAll('span');
+          if (navLinks.classList.contains('drawer-active')) {
+            spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
+            spans[1].style.opacity = '0';
+            spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+          } else {
+            spans[0].style.transform = 'none';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = 'none';
+          }
+        });
+      }
+
+      // 3. Dynamic Router Logic
+      const urlParams = new URLSearchParams(window.location.search);
+      let prodId = urlParams.get('id');
+      
+      const dynamicContentWrap = document.getElementById('dynamicContentWrap');
+      
+      if (!dynamicContentWrap) return;
+      
+      const productsList = window.productsData || [];
+      const product = productsList.find(p => p.id === prodId || p.id === `prod-${prodId}` || `prod-${p.id}` === prodId);
+      
+      if (product) {
+        // Set page metadata dynamically
+        document.title = `${product.name} | Deepak Trading Corporation`;
+        
+        // Build specs table
+        let specsRowsHtml = '';
+        Object.entries(product.specs).forEach(([k, v]) => {
+          specsRowsHtml += `
+            <tr>
+              <td class="detail-specs-label">${k}</td>
+              <td class="detail-specs-val">${v}</td>
+            </tr>
+          `;
+        });
+        
+        // Category description mapping
+        const categoryLabels = {
+          'road-studs': 'Road Studs',
+          'reflective-tapes': 'Reflective Tapes',
+          'marking-paint': 'Road Paint',
+          'traffic-cones': 'Traffic Cones',
+          'speed-breakers': 'Speed Breakers',
+          'sign-boards': 'Sign Boards',
+          'warning-lights': 'Warning Lights',
+          'parking-guards': 'Parking Guards'
+        };
+        
+        const catLabel = categoryLabels[product.category] || product.category.replace('-', ' ');
+        
+        // Dynamic "Where to Use" messages based on category
+        const whereToUseMessages = {
+          'road-studs': 'Certified for Raised Pavement Markers (RPM) standard installation according to IRC Section 67 Expressway layout protocols. Essential for nocturnal lane visibility under dark motorway driving conditions.',
+          'reflective-tapes': 'Conforms fully to NHAI retroreflective sheeting regulations. Engineered with microprismatic glass technology for high visibility on high-speed expressway corridors.',
+          'marking-paint': 'Conforms to MORTH specifications for thermoplastic pavement markings. Infused with Swarco glass beads for optimal nighttime visibility on national highways.',
+          'traffic-cones': 'Ideal for municipal utility lane divisions, road construction warnings, school zones, commercial warehouses, and smart parking safety zoning.',
+          'speed-breakers': 'Perfect for slowing down traffic speeds in commercial layouts, corporate IT parks, smart parking driveways, residential housing societies, and industrial warehouses.',
+          'sign-boards': 'IRC compliant high-conspicuity traffic indicators, warning notices, and direction vectors mounted on heavy-duty aluminum composite panels.',
+          'warning-lights': 'Essential for highway safety at night, construction zone barrier markings, utility warning setups, and airport runway delineations.',
+          'parking-guards': 'Engineered to completely prevent structural damage and vehicle impact buffer damage inside tight underground basements, corporate parking zones, and logistics warehouses.'
+        };
+        
+        const useMsg = whereToUseMessages[product.category] || 'Certified road and industrial safety equipment compliant with local municipal and highway regulatory guidelines.';
+
+        // Build product gallery thumbnails html if installation image, physical product image, specs drawing, or gallery array exists
+        let thumbnailsHtml = '';
+        const galleryList = product.gallery || [];
+        
+        // Build fallback list if gallery array is not provided
+        if (galleryList.length === 0) {
+          if (product.installationImage) galleryList.push({ src: product.installationImage, alt: "Installation View" });
+          if (product.physicalImage) galleryList.push({ src: product.physicalImage, alt: "Physical View" });
+          if (product.variantImage) galleryList.push({ src: product.variantImage, alt: "Variants View" });
+          if (product.specDiagram) galleryList.push({ src: product.specDiagram, alt: "Technical Specifications" });
+        }
+
+        if (galleryList.length > 0) {
+          thumbnailsHtml += `
+            <div class="gallery-thumb" onclick="switchDetailImage('${product.image}', this)" style="width: 70px; height: 70px; border: 2px solid var(--color-accent); border-radius: 6px; padding: 4px; cursor: pointer; background: #FFF; transition: all 0.2s ease; display: flex; justify-content: center; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+              <img src="${product.image}" alt="Product View" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 2px;">
+            </div>
+          `;
+          galleryList.forEach(item => {
+            thumbnailsHtml += `
+              <div class="gallery-thumb" onclick="switchDetailImage('${item.src}', this)" style="width: 70px; height: 70px; border: 2px solid var(--color-border-grid); border-radius: 6px; padding: 4px; cursor: pointer; background: #FFF; transition: all 0.2s ease; display: flex; justify-content: center; align-items: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                <img src="${item.src}" alt="${item.alt || 'Gallery View'}" style="max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 2px;">
+              </div>
+            `;
+          });
+          thumbnailsHtml = `<div class="product-gallery-thumbnails" style="display: flex; gap: 12px; margin-top: 15px; justify-content: center; flex-wrap: wrap;">${thumbnailsHtml}</div>`;
+        }
+
+        // === YOU MAY ALSO LIKE: 3 Related Product Suggestions ===
+        let relatedProducts = productsList
+          .filter(p => p.category === product.category && p.id !== product.id);
+        
+        if (relatedProducts.length < 3) {
+          const fallbackProducts = productsList
+            .filter(p => p.category !== product.category && p.id !== product.id);
+          relatedProducts = relatedProducts.concat(fallbackProducts).slice(0, 3);
+        } else {
+          relatedProducts = relatedProducts.slice(0, 3);
+        }
+
+        let suggestionsHtml = '';
+        if (relatedProducts.length > 0) {
+          const suggestionCards = relatedProducts.map(rp => {
+            const firstSpecKey = Object.keys(rp.specs)[0];
+            const firstSpecVal = rp.specs[firstSpecKey];
+            return `
+              <a class="suggestion-card" href="product.html?id=${rp.id}">
+                <div style="overflow: hidden;">
+                  <img class="suggestion-card-img" src="${rp.image}" alt="${rp.name}" loading="lazy">
+                </div>
+                <div class="suggestion-card-body">
+                  <span class="suggestion-card-brand">${rp.brand.toUpperCase()}</span>
+                  <div class="suggestion-card-name">${rp.name}</div>
+                  <div class="suggestion-card-spec"><strong>${firstSpecKey}:</strong> ${firstSpecVal}</div>
+                  <span class="suggestion-card-cta">
+                    View Details
+                    <svg style="width:14px;height:14px;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                  </span>
+                </div>
+              </a>
+            `;
+          }).join('');
+
+          suggestionsHtml = `
+            <div class="suggestions-section">
+              <div class="suggestions-header">
+                <div>
+                  <p class="suggestions-label">You May Also Like</p>
+                  <h2 class="suggestions-title">Related Products</h2>
+                </div>
+              </div>
+              <div class="suggestions-grid">
+                ${suggestionCards}
+              </div>
+            </div>
+          `;
+        }
+
+        dynamicContentWrap.innerHTML = `
+          <div class="detail-grid">
+            
+            <!-- Left Column: Visuals -->
+            <div class="detail-visual-col">
+              <div class="detail-image-box" onclick="openZoomLightbox('${product.image}')">
+                <img src="${product.image}" alt="${product.name}" id="mainDetailImg">
+                <span style="position: absolute; bottom: 15px; right: 15px; background: rgba(15,23,42,0.85); color: #FFF; font-size: 0.72rem; padding: 6px 12px; border-radius: 20px; font-weight: 700; display: flex; align-items: center; gap: 6px; cursor: pointer; transition: 0.3s; z-index: 10;">
+                  <svg style="width: 14px; height: 14px;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                  Click to Zoom
+                </span>
+              </div>
+              ${thumbnailsHtml}
+              <div style="font-size: 0.75rem; color: var(--text-light); text-align: center; margin-top: 10px;">
+                * Click on any thumbnail above to switch main preview. Direct click on product image triggers zoom graphic lightbox.
+              </div>
+            </div>
+
+            <!-- Right Column: Product Info & Pre-filled B2B quote -->
+            <div class="detail-info-col">
+              <span class="detail-category"><a href="catalog.html?category=${product.category}">${catLabel}</a></span>
+              <h1 class="detail-title">${product.name}</h1>
+              <p class="detail-desc">${product.description}</p>
+              
+
+
+              <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--text-dark); margin-bottom: 15px; border-bottom: 1px solid var(--color-border-grid); padding-bottom: 8px;">Technical Features Matrix</h3>
+              <table class="detail-specs-table">
+                <tbody>
+                  ${specsRowsHtml}
+                </tbody>
+              </table>
+
+              <div style="display: flex; gap: 15px;">
+                <button class="btn btn-primary" onclick="openEnquiryModal('${product.category}', '${product.name}', '${product.image}')" style="flex: 1.2; padding: 14px 10px; font-size: 0.95rem; font-weight: 700;">
+                  Request B2B Wholesale Pricing
+                </button>
+                <a href="https://wa.me/917718873198?text=Hello%20DETCO,%20I'm%20interested%20in%20a%20B2B%20wholesale%20price%20quote%20for%20the%20${encodeURIComponent(product.name)}." target="_blank" class="btn btn-secondary" style="flex: 0.8; padding: 14px 10px; font-size: 0.95rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none;">
+                  <svg xmlns="http://www.w3.org/2000/svg" style="width: 20px; height: 20px; flex-shrink: 0;" viewBox="0 0 48 48">
+                    <circle cx="24" cy="24" r="24" fill="#25D366"/>
+                    <path fill="#fff" d="M35.2 12.8A15.9 15.9 0 0 0 24 8C15.2 8 8 15.2 8 24c0 2.8.7 5.5 2.1 7.9L8 40l8.3-2.2A16 16 0 0 0 24 40c8.8 0 16-7.2 16-16 0-4.3-1.7-8.3-4.8-11.2zm-11.2 24.6a13.3 13.3 0 0 1-6.8-1.9l-.5-.3-5 1.3 1.3-4.8-.3-.5A13.2 13.2 0 0 1 10.7 24c0-7.3 6-13.3 13.3-13.3a13.3 13.3 0 0 1 9.4 3.9 13.2 13.2 0 0 1 3.9 9.4c0 7.4-6 13.4-13.3 13.4zm7.3-10c-.4-.2-2.3-1.1-2.6-1.3-.4-.1-.6-.2-.9.2-.2.4-.9 1.2-1.1 1.5-.2.2-.4.2-.8 0-.4-.2-1.6-.6-3-1.8-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7.4-.7.2-.6c0-.2-.1-.4-.2-.6-.2-.2-.9-2.1-1.2-2.9-.3-.8-.6-.7-.9-.7h-.7c-.2 0-.6.1-1 .5-.3.4-1.3 1.3-1.3 3.1s1.3 3.6 1.5 3.9c.2.2 2.6 4 6.3 5.6.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.6.2-1.8-.1-.2-.3-.3-.7-.5z"/>
+                  </svg>
+                  Chat on WhatsApp
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- "Where to Use" dynamically generated section -->
+          <div class="where-to-use-box" style="margin-bottom: 60px;">
+            <h4 class="where-to-use-title">
+              <svg style="width: 20px; height: 20px; color: var(--color-accent);" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+              Standard Highway & Industrial Placement Guidelines
+            </h4>
+            <p class="where-to-use-desc" style="margin-bottom: 0;">${useMsg}</p>
+          </div>
+
+          <!-- You May Also Like Section -->
+          ${suggestionsHtml}
+        `;
+        initHoverZoom();
+      } else {
+        // Render detailed "Not Found" error state with NO empty white boxes
+        dynamicContentWrap.innerHTML = `
+          <div class="error-card">
+            <div class="success-icon-wrap" style="border-color: var(--color-accent); color: var(--color-accent); background: none; width: 56px; height: 56px; margin: 0 auto 20px auto;">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+            </div>
+            <h2 style="font-size: 1.45rem; font-weight: 800; color: var(--text-dark); margin-bottom: 8px;">Safety Solution Not Found</h2>
+            <p style="font-size: 0.9rem; color: var(--text-medium); margin-bottom: 24px; line-height: 1.55;">
+              The requested road safety catalog item code does not match our current active NHAI-PWD registry.
+            </p>
+            <button class="btn btn-primary" onclick="window.location.href='catalog.html'" style="padding: 12px 24px; font-size: 0.85rem;">
+              Browse Full B2B Catalog
+            </button>
+          </div>
+        `;
+      }
+    });
+
+    // 4. Zoom Lightbox Modal
+    window.openZoomLightbox = function(src) {
+      const lightbox = document.getElementById('zoomLightbox');
+      const lightboxImg = document.getElementById('zoomLightboxImg');
+      if (lightbox && lightboxImg) {
+        lightboxImg.src = src;
+        lightbox.classList.add('active');
+        lightbox.setAttribute('aria-hidden', 'false');
+      }
+    };
+
+    window.switchDetailImage = function(src, thumbElement) {
+      const mainImg = document.getElementById('mainDetailImg');
+      const imgBox = document.querySelector('.detail-image-box');
+      if (mainImg) {
+        mainImg.src = src;
+      }
+      if (imgBox) {
+        imgBox.setAttribute('onclick', `openZoomLightbox('${src}')`);
+      }
+      // Reset all thumbnail borders
+      const thumbs = document.querySelectorAll('.gallery-thumb');
+      thumbs.forEach(t => {
+        t.style.borderColor = 'var(--color-border-grid)';
+      });
+      if (thumbElement) {
+        thumbElement.style.borderColor = 'var(--color-accent)';
+      }
+    };
+
+    window.initHoverZoom = function() {
+      const container = document.querySelector('.detail-image-box');
+      const img = document.getElementById('mainDetailImg');
+      if (!container || !img) return;
+
+      container.addEventListener('mousemove', (e) => {
+        const rect = container.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        img.style.transformOrigin = `${x}% ${y}%`;
+        img.style.transform = 'scale(1.8)';
+      });
+
+      container.addEventListener('mouseleave', () => {
+        img.style.transformOrigin = 'center center';
+        img.style.transform = 'scale(1)';
+      });
+    };
+    
+    window.closeZoomLightbox = function() {
+      const lightbox = document.getElementById('zoomLightbox');
+      if (lightbox) {
+        lightbox.classList.remove('active');
+        lightbox.setAttribute('aria-hidden', 'true');
+      }
+    };
+
+    // 5. Global Enquiry Modal Controller
+    function showB2bToast(message, type = 'error') {
+      const existing = document.querySelector('.b2b-toast');
+      if (existing) {
+        existing.remove();
+      }
+
+      const toast = document.createElement('div');
+      toast.className = 'b2b-toast';
+      toast.style.cssText = `
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: ${type === 'success' ? 'rgba(16, 185, 129, 0.85)' : 'rgba(220, 38, 38, 0.85)'};
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        color: #ffffff;
+        padding: 16px 24px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        z-index: 999999;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-family: var(--font-body, sans-serif);
+        font-size: 0.88rem;
+        font-weight: 600;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      `;
+
+      const icon = type === 'success' 
+        ? `<svg style="width: 20px; height: 20px; flex-shrink: 0;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`
+        : `<svg style="width: 20px; height: 20px; flex-shrink: 0;" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>`;
+
+      toast.innerHTML = `${icon} <span>${message}</span>`;
+      document.body.appendChild(toast);
+
+      setTimeout(() => {
+        toast.style.opacity = '1';
+        toast.style.transform = 'translateY(0)';
+      }, 10);
+
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+          toast.remove();
+        }, 300);
+      }, 4000);
+    }
+    window.showB2bToast = showB2bToast;
+
+    window.openEnquiryModal = function(category = null, productName = '', productImage = '') {
+      const modal = document.getElementById('enquiryModal');
+      if (!modal) return;
+
+      const form = document.getElementById('enquiryForm');
+      const successPanel = document.getElementById('successPanel');
+      if (form) form.style.display = 'block';
+      if (successPanel) successPanel.style.display = 'none';
+
+      if (form) {
+        form.reset();
+      }
+
+      // Pre-fill Category
+      const catSelect = document.getElementById('prodCategory');
+      if (catSelect && category) {
+        catSelect.value = category;
+      }
+
+      // Pre-fill requirements/message
+      const reqTextarea = document.getElementById('requirements');
+      if (reqTextarea) {
+        if (productName) {
+          reqTextarea.value = `Interested in B2B Bulk Price for "${productName}". Please provide detailed pricing catalog, minimum order quantity, and lead time.`;
+        } else {
+          reqTextarea.value = '';
+        }
+      }
+
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    };
+
+    window.closeEnquiryModal = function() {
+      const modal = document.getElementById('enquiryModal');
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
+    };
+
+    // Close on overlay background click
+    document.addEventListener('DOMContentLoaded', () => {
+      const modal = document.getElementById('enquiryModal');
+      if (modal) {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            window.closeEnquiryModal();
+          }
+        });
+      }
+
+      // Close on close button click
+      const closeModalBtn = document.getElementById('closeModal');
+      if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.closeEnquiryModal();
+        });
+      }
+
+      // Form Submit
+      const enquiryForm = document.getElementById('enquiryForm');
+      if (enquiryForm) {
+        enquiryForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+
+          const submitBtn = enquiryForm.querySelector('button[type="submit"]');
+          const originalBtnText = submitBtn ? submitBtn.innerHTML : 'Submit Request for Bulk Pricing';
+
+          if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `
+              <svg style="animation: spin 1s linear infinite; width: 18px; height: 18px; margin-right: 6px; display: inline-block; vertical-align: middle;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.283 6M11 3v9h9" />
+              </svg> Processing Request...
+            `;
+          }
+
+          const fullName = document.getElementById('fullName').value;
+          const companyName = document.getElementById('companyName').value || 'Individually Sourced';
+          const prodCategorySelect = document.getElementById('prodCategory');
+          const prodCategoryText = prodCategorySelect ? prodCategorySelect.options[prodCategorySelect.selectedIndex].text : '';
+          const estQty = document.getElementById('estQty').value;
+
+          const formData = new FormData(enquiryForm);
+
+          try {
+            // Submit to Web3Forms
+            const response = await fetch("https://api.web3forms.com/submit", {
+              method: "POST",
+              body: formData
+            });
+            const result = await response.json();
+
+            if (!result.success) {
+              throw new Error(result.message || "Web3Forms submission failed");
+            }
+
+            // Backup call to local backend
+            try {
+              await fetch('http://localhost:3001/api/submit-lead', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  name: fullName,
+                  company: companyName,
+                  phone: document.getElementById('phoneNum').value,
+                  email: document.getElementById('emailAddr').value,
+                  requirements: document.getElementById('requirements').value,
+                  quantity: estQty,
+                  category: prodCategoryText,
+                  source: 'centered-modal'
+                })
+              });
+            } catch (backendErr) {
+              console.warn('Backup local logging failed:', backendErr);
+            }
+
+            // Show success panel
+            const randId = Math.floor(1000 + Math.random() * 9000);
+            const refNo = `RFQ-${randId}-${new Date().getFullYear()}`;
+
+            const successPanel = document.getElementById('successPanel');
+            if (successPanel) {
+              document.getElementById('refNumberText').textContent = refNo;
+              document.getElementById('successClientText').textContent = fullName;
+              document.getElementById('successCompanyText').textContent = companyName;
+              document.getElementById('successQtyText').textContent = `${estQty} Units (${prodCategoryText})`;
+              
+              enquiryForm.style.display = 'none';
+              successPanel.style.display = 'flex';
+            }
+          } catch (err) {
+            console.error('Submission error:', err);
+            showB2bToast(`Submission failed: ${err.message || 'Network error occurred.'}`);
+          } finally {
+            if (submitBtn) {
+              submitBtn.disabled = false;
+              submitBtn.innerHTML = originalBtnText;
+            }
+          }
+        });
+      }
+    });
+  </script>
+  <script src="js/proactive-form.js?v=4.0"></script>
+</body>
+</html>

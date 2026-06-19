@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
+  <rect x="25" y="25" width="50" height="30" rx="3" fill="#DC2626"/>
+  <text x="50" y="46" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="0.5">A</text>
+  <text x="90" y="48" font-family="'Plus Jakarta Sans', sans-serif" font-size="22" font-weight="900" fill="#0F172A" letter-spacing="0.5">AFCONS</text>
+  <text x="90" y="60" font-family="'Inter', sans-serif" font-size="8" font-weight="700" fill="#DC2626" letter-spacing="1">INFRASTRUCTURE</text>
+</svg>
