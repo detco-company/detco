@@ -316,7 +316,7 @@ html, body { overflow-x: hidden; }
   .git-heading { font-size: 1.5rem !important; }
 
   .section-title { font-size: 1.3rem !important; }
-
+  .theater-section h2 { font-size: 1.3rem !important; }
 }
 
 /* ═══════════════════════
@@ -426,7 +426,7 @@ html, body { overflow-x: hidden; }
   .hero-content,
   .hero-visual,
   .hero-description { width: 100% !important; max-width: 100% !important; min-width: 0 !important; }
-  .hero-visual { order: -1 !important; height: auto !important; min-height: 220px !important; }
+  .hero-visual { order: 1 !important; height: auto !important; min-height: 220px !important; }
   .hero-content { padding: 20px 14px !important; }
   .trust-kpi-card { flex: 1 1 100% !important; min-width: 0 !important; }
   .btn { width: 100% !important; }
@@ -543,63 +543,87 @@ html, body { overflow-x: hidden; }
     flex-shrink: 0 !important;
   }
 
-  header.main-header nav.nav-links.drawer-active {
+  /* When drawer is active */
+  header.main-header nav.nav-links.drawer-active,
+  header.main-header.scrolled nav.nav-links.drawer-active {
+    display: flex !important;
     position: fixed !important;
-    top: 84px !important;
-    left: 10px !important;
-    right: 10px !important;
+    top: 78px !important;
+    left: 8px !important;
+    right: 8px !important;
     bottom: auto !important;
-    max-height: calc(100dvh - 100px) !important;
-    padding: 14px !important;
-    gap: 6px !important;
-    border: 1px solid rgba(15, 23, 42, 0.1) !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    padding: 16px !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(15,23,42,0.08) !important;
     border-radius: 20px !important;
-    background: rgba(255, 255, 255, 0.98) !important;
-    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.18) !important;
+    box-shadow: 0 24px 60px rgba(15,23,42,0.15) !important;
+    z-index: 89999 !important;
+    max-height: calc(100dvh - 90px) !important;
     overflow-y: auto !important;
+    overflow-x: hidden !important;
   }
 
   header.main-header nav.nav-links.drawer-active > a,
-  header.main-header nav.nav-links.drawer-active .nav-dropdown-trigger {
+  header.main-header.scrolled nav.nav-links.drawer-active > a,
+  header.main-header nav.nav-links.drawer-active .nav-dropdown-trigger,
+  header.main-header.scrolled nav.nav-links.drawer-active .nav-dropdown-trigger {
+    width: 100% !important;
+    height: 48px !important;
+    padding: 0 16px !important;
+    border-radius: 12px !important;
+    background: #f1f5f9 !important;
+    justify-content: flex-start !important;
+    font-size: 0.88rem !important;
+    font-weight: 700 !important;
+    color: #0f172a !important;
     display: flex !important;
     align-items: center !important;
-    justify-content: space-between !important;
+  }
+
+  /* Style for Phone Call link inside mobile drawer */
+  header.main-header nav.nav-links.drawer-active a[href^="tel:"],
+  header.main-header.scrolled nav.nav-links.drawer-active a[href^="tel:"] {
+    background: #fef2f2 !important;
+    color: var(--color-accent) !important;
+    border: 1px dashed rgba(220, 38, 38, 0.25) !important;
+  }
+
+  header.main-header nav.nav-links.drawer-active .nav-dropdown-wrapper,
+  header.main-header.scrolled nav.nav-links.drawer-active .nav-dropdown-wrapper {
     width: 100% !important;
-    min-height: 46px !important;
-    padding: 0 14px !important;
-    border: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: visible !important;
+  }
+
+  /* Hide dropdown caret and menu inside mobile drawer */
+  header.main-header nav.nav-links.drawer-active .dropdown-caret,
+  header.main-header.scrolled nav.nav-links.drawer-active .dropdown-caret,
+  header.main-header nav.nav-links.drawer-active .nav-dropdown-menu,
+  header.main-header.scrolled nav.nav-links.drawer-active .nav-dropdown-menu {
+    display: none !important;
+  }
+
+  header.main-header nav.nav-links.drawer-active .btn-primary,
+  header.main-header.scrolled nav.nav-links.drawer-active .btn-primary {
+    width: 100% !important;
+    height: 48px !important;
     border-radius: 12px !important;
-    background: #f8fafc !important;
-    color: var(--text-dark) !important;
+    margin-top: 10px !important;
+    justify-content: center !important;
+    font-weight: 800 !important;
+    box-shadow: 0 8px 24px rgba(220, 38, 38, 0.2) !important;
   }
 
-  header.main-header nav.nav-links.drawer-active .nav-dropdown-wrapper {
+  header.main-header nav.nav-links.drawer-active .mobile-search-bar,
+  header.main-header.scrolled nav.nav-links.drawer-active .mobile-search-bar {
+    display: block !important;
     width: 100% !important;
-    height: auto !important;
-  }
-
-  header.main-header nav.nav-links.drawer-active .nav-dropdown-menu {
-    position: static !important;
-    width: 100% !important;
-    transform: none !important;
-    padding: 6px 0 0 0 !important;
-    border: 0 !important;
-    box-shadow: none !important;
-    background: transparent !important;
-  }
-
-  header.main-header nav.nav-links.drawer-active .nav-dropdown-menu a {
-    min-height: 38px !important;
-    padding: 8px 14px 8px 24px !important;
-    border: 0 !important;
-    background: transparent !important;
-    color: var(--text-medium) !important;
-  }
-
-  header.main-header nav.nav-links.drawer-active .btn-primary {
-    width: 100% !important;
-    margin-top: 6px !important;
-    border-radius: 999px !important;
+    margin-bottom: 4px !important;
   }
 }
 
@@ -689,3 +713,433 @@ html, body { overflow-x: hidden; }
     box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15) !important;
   }
 }
+
+/* ═══════════════════════
+   MOBILE POLISH AND TWEAKS
+   (Small devices overrides)
+   ═══════════════════════ */
+@media (max-width: 768px) {
+  /* 1. Safety Ticker Position & Grey Line Removal */
+  .hero {
+    padding-top: 10px !important;
+  }
+  .hero-grid {
+    border: none !important;
+  }
+  .hero-content {
+    padding-top: 10px !important;
+  }
+
+  /* 2. Hero CTA Buttons in a single line with consistent sizing */
+  .hero-cta {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 8px !important;
+    width: 100% !important;
+    margin-top: 8px !important;
+  }
+  .hero-cta .btn {
+    flex: 1 1 0% !important;
+    width: auto !important;
+    padding: 10px 6px !important;
+    font-size: 0.72rem !important;
+    letter-spacing: 0px !important;
+    white-space: normal !important;
+    height: 42px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  /* 3. Hero Feature Items stacked to single horizontal row with centered icons/text and balanced dividers */
+  .hero-features {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0 !important;
+    width: 100% !important;
+    margin-top: 20px !important;
+    border-top: 1px solid var(--color-border-grid) !important;
+    border-bottom: none !important;
+  }
+  .hero-features .hero-feature-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 12px 4px !important;
+    border-bottom: none !important;
+    border-right: 1px dashed var(--color-border-grid) !important;
+  }
+  .hero-features .hero-feature-item:last-child {
+    border-right: none !important;
+  }
+  .hero-feature-icon, .hero-features .hero-feature-item svg {
+    width: 20px !important;
+    height: 20px !important;
+    margin-bottom: 6px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    align-self: center !important;
+  }
+  .hero-feature-num {
+    font-size: 0.95rem !important;
+    font-weight: 800 !important;
+  }
+  .hero-feature-text {
+    font-size: 0.58rem !important;
+    line-height: 1.2 !important;
+    margin-top: 2px !important;
+  }
+
+  /* 4. Remove media (slideshow visual) from mobile */
+  .hero-visual {
+    display: none !important;
+  }
+
+  /* 5. Redesigned trust KPI cards layout on mobile (2x2 grid layout with identical dimensions) */
+  .trust-intro-right {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+    width: 100% !important;
+    margin-top: 24px !important;
+    align-items: stretch !important;
+  }
+  .trust-kpi-card {
+    flex: 1 1 0% !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 16px 12px !important;
+    height: 120px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    text-align: left !important;
+    border-radius: 12px !important;
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25) !important;
+    position: relative !important;
+  }
+  .trust-kpi-card--highlight {
+    background: rgba(220, 38, 38, 0.08) !important;
+    border-color: rgba(220, 38, 38, 0.3) !important;
+  }
+  .trust-kpi-card::before {
+    content: '' !important;
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 4px !important;
+    height: 100% !important;
+    background: var(--color-accent) !important;
+    border-radius: 4px 0 0 4px !important;
+    opacity: 1 !important;
+  }
+  .trust-kpi-icon {
+    display: flex !important;
+    width: 24px !important;
+    height: 24px !important;
+    margin-bottom: 6px !important;
+    background: rgba(220, 38, 38, 0.12) !important;
+    border: 1px solid rgba(220, 38, 38, 0.25) !important;
+    border-radius: 5px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #fca5a5 !important;
+  }
+  .trust-kpi-icon svg {
+    width: 12px !important;
+    height: 12px !important;
+    stroke: currentColor !important;
+    display: block !important;
+  }
+  .trust-kpi-num {
+    font-size: 1.2rem !important;
+    font-weight: 900 !important;
+    color: #FFFFFF !important;
+    margin-bottom: 2px !important;
+    line-height: 1 !important;
+    display: block !important;
+  }
+  .trust-kpi-label {
+    font-size: 0.58rem !important;
+    color: #CBD5E1 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+  }
+
+  /* 5.5. Redesigned white stats cards layout on mobile (2x2 grid layout with identical dimensions) */
+  .stats-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 12px !important;
+    width: 100% !important;
+    align-items: stretch !important;
+  }
+  .stat-card {
+    flex: 1 1 0% !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 16px 12px !important;
+    height: 155px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    border-radius: 12px !important;
+    background: #FFFFFF !important;
+    border: 1px solid var(--color-border-grid) !important;
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04) !important;
+  }
+  .stat-card:hover {
+    transform: none !important;
+  }
+  .stat-number {
+    font-size: 1.8rem !important;
+    font-weight: 800 !important;
+    color: var(--color-accent) !important;
+    line-height: 1 !important;
+    margin-bottom: 4px !important;
+  }
+  .stat-label {
+    font-size: 0.62rem !important;
+    font-weight: 800 !important;
+    color: var(--text-dark) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 4px !important;
+  }
+  .stat-desc {
+    font-size: 0.55rem !important;
+    color: var(--text-light) !important;
+    line-height: 1.25 !important;
+  }
+
+  /* 6. Typography adjustments for all text sizes on mobile website */
+  .hero-title {
+    font-size: 1.55rem !important;
+  }
+  .hero-description {
+    font-size: 0.85rem !important;
+  }
+  .trust-intro-headline {
+    font-size: 1.6rem !important;
+  }
+  .trust-intro-subline {
+    font-size: 0.85rem !important;
+  }
+  .section-title {
+    font-size: 1.35rem !important;
+  }
+  .section-subtitle {
+    font-size: 0.8rem !important;
+  }
+  .about-title {
+    font-size: 1.35rem !important;
+  }
+  .about-text {
+    font-size: 0.88rem !important;
+  }
+  .about-point-title {
+    font-size: 0.9rem !important;
+  }
+  .about-point-desc {
+    font-size: 0.8rem !important;
+  }
+  .git-heading {
+    font-size: 1.35rem !important;
+  }
+  .git-subtext {
+    font-size: 0.85rem !important;
+  }
+  .features-bar-title {
+    font-size: 0.8rem !important;
+  }
+  .features-bar-desc {
+    font-size: 0.68rem !important;
+  }
+
+  /* 7. Marquee Tickering & Logo Card Sizing on Mobile */
+  .marquee-container {
+    overflow: hidden !important;
+    pointer-events: none !important;
+  }
+  .marquee-content {
+    animation: marquee 24s linear infinite !important;
+    display: flex !important;
+    gap: 12px !important;
+    width: max-content !important;
+    will-change: transform !important;
+  }
+  #trustBannerOrgs .marquee-content {
+    animation: marquee 34s linear infinite reverse !important;
+  }
+  .brand-item {
+    width: 110px !important;
+    height: 60px !important;
+    padding: 8px 16px !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(15, 23, 42, 0.06) !important;
+  }
+  .brand-item img {
+    height: 28px !important;
+    width: auto !important;
+    max-width: 90% !important;
+    object-fit: contain !important;
+  }
+  .trust-divider {
+    margin: 20px 0 10px 0 !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+  .trust-divider-accent {
+    font-size: 0.6rem !important;
+    letter-spacing: 1.8px !important;
+    padding: 8px 18px !important;
+  }
+  .trust-track-pill {
+    font-size: 0.48rem !important;
+    letter-spacing: 0.8px !important;
+    padding: 4px 10px !important;
+    white-space: normal !important;
+    text-align: center !important;
+    display: inline-flex !important;
+    max-width: 90% !important;
+    align-items: center !important;
+  }
+  .trust-track-pill::before,
+  .trust-track-pill::after {
+    margin-top: 0px !important;
+  }
+  .trust-banner {
+    clip-path: none !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 32px 0 !important;
+  }
+  .trust-banner-box {
+    margin-bottom: 12px !important;
+  }
+  .trust-track-label {
+    margin-bottom: 10px !important;
+  }
+
+  /* 8. Map Action Buttons (Get Directions & Copy Address) in a single line */
+  .map-action-buttons {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+  .map-action-buttons .map-card-cta-btn,
+  .map-action-buttons .map-copy-address-btn {
+    flex: 1 1 0% !important;
+    font-size: 0.68rem !important;
+    padding: 0 8px !important;
+    height: 40px !important;
+    white-space: nowrap !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    letter-spacing: 0px !important;
+    box-sizing: border-box !important;
+    text-transform: uppercase !important;
+  }
+
+  /* 9. Custom Solution Features in a single horizontal line */
+  .custom-solution-features {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    width: 100% !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+  .custom-solution-feature-item {
+    flex: 1 1 0% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    min-width: 0 !important;
+  }
+  .custom-solution-feature-icon {
+    width: 34px !important;
+    height: 34px !important;
+    margin-bottom: 4px !important;
+  }
+  .custom-solution-feature-icon svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+  .custom-solution-feature-text {
+    font-size: 0.62rem !important;
+    line-height: 1.2 !important;
+    display: block !important;
+    width: 100% !important;
+    word-wrap: break-word !important;
+    white-space: normal !important;
+  }
+
+  /* 10. Video Showcase Section Responsive Typography & Tag Adjustments */
+  .theater-section h2 {
+    font-size: 1.35rem !important;
+  }
+  .theater-section p {
+    font-size: 0.8rem !important;
+    max-width: 100% !important;
+    line-height: 1.5 !important;
+  }
+  .showcase-tag-pill {
+    padding: 4px 12px !important;
+    margin-bottom: 12px !important;
+    gap: 6px !important;
+  }
+  .showcase-tag-pill span:first-child {
+    width: 5px !important;
+    height: 5px !important;
+  }
+  .showcase-tag-text {
+    font-size: 0.6rem !important;
+    letter-spacing: 1px !important;
+  }
+  .theater-hud-left {
+    top: 8px !important;
+    left: 8px !important;
+    padding: 4px 10px !important;
+    font-size: 0.58rem !important;
+    gap: 5px !important;
+  }
+  .theater-hud-left span:first-child {
+    width: 5px !important;
+    height: 5px !important;
+  }
+  .theater-hud-right {
+    top: 8px !important;
+    right: 8px !important;
+    padding: 4px 10px !important;
+    font-size: 0.58rem !important;
+    gap: 4px !important;
+  }
+  .theater-hud-right svg {
+    width: 10px !important;
+    height: 10px !important;
+  }
+}
+

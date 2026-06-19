@@ -879,6 +879,20 @@
             spans[2].style.transform = 'none';
           }
         });
+
+        // Automatically collapse mobile drawer upon clicking any anchor links inside it
+        const drawerLinks = navLinks.querySelectorAll('a');
+        drawerLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            if (navLinks.classList.contains('drawer-active')) {
+              navLinks.classList.remove('drawer-active');
+              const spans = menuToggle.querySelectorAll('span');
+              spans[0].style.transform = 'none';
+              spans[1].style.opacity = '1';
+              spans[2].style.transform = 'none';
+            }
+          });
+        });
       }
 
       // 3. Dynamic Router Logic

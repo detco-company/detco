@@ -1274,7 +1274,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nums = [
       { el: kpiCards[0]?.querySelector('.trust-kpi-num'), target: 50,   suffix: '+',   prefix: '' },
       { el: kpiCards[1]?.querySelector('.trust-kpi-num'), target: 5,    suffix: '+',   prefix: '' },
-      { el: kpiCards[2]?.querySelector('.trust-kpi-num'), target: 10,   suffix: '+',   prefix: '' },
+      { el: kpiCards[2]?.querySelector('.trust-kpi-num'), target: 100,  suffix: '+',   prefix: '' },
       { el: kpiCards[3]?.querySelector('.trust-kpi-num'), target: 24,   suffix: ' Hr', prefix: '' },
     ];
 

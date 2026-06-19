@@ -41,14 +41,14 @@ def find_free_port(start=START_PORT, end=MAX_PORT):
 PORT = find_free_port()
 socketserver.TCPServer.allow_reuse_address = True
 
-print("╔══════════════════════════════════════════════════╗")
-print("║   Deepak Trading Corporation — Dev Server        ║")
+print("+--------------------------------------------------+")
+print("|   Deepak Trading Corporation - Dev Server        |")
 if PORT == START_PORT:
-    print(f"║   http://localhost:{PORT}                          ║")
+    print(f"|   http://localhost:{PORT}                          |")
 else:
-    print(f"║   http://localhost:{PORT} (port {START_PORT} busy) ║")
-print("║   Press  Ctrl+C  to stop                         ║")
-print("╚══════════════════════════════════════════════════╝")
+    print(f"|   http://localhost:{PORT} (port {START_PORT} busy) |")
+print("|   Press  Ctrl+C  to stop                         |")
+print("+--------------------------------------------------+")
 
 webbrowser.open(f"http://localhost:{PORT}")
 
