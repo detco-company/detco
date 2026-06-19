@@ -623,23 +623,14 @@ html, body { overflow-x: hidden; }
   }
 }
 
-/* Header starts full-width, then becomes a curved floating bar on scroll. */
+/* ═══════════════════════
+   MOBILE FLOATING HEADER (max 1024px)
+   ═══════════════════════ */
 @media (max-width: 1024px) {
   header.main-header,
+  header.main-header.scrolled,
   header.main-header:not(.scrolled) {
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    width: 100% !important;
-    transform: none !important;
-    border-radius: 0 !important;
-    border: 0 !important;
-    border-bottom: 1px solid rgba(15, 23, 42, 0.08) !important;
-    background: rgba(255, 255, 255, 0.96) !important;
-    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05) !important;
-  }
-
-  header.main-header.scrolled {
+    position: fixed !important;
     top: 8px !important;
     left: 50% !important;
     right: auto !important;
@@ -649,6 +640,11 @@ html, body { overflow-x: hidden; }
     border: 1px solid rgba(220, 38, 38, 0.25) !important;
     background: rgba(255, 255, 255, 0.95) !important;
     box-shadow: 0 18px 50px rgba(15, 23, 42, 0.13) !important;
+  }
+
+  header.main-header::before,
+  header.main-header.scrolled::before {
+    display: none !important;
   }
 
   header.main-header .container,
@@ -666,12 +662,7 @@ html, body { overflow-x: hidden; }
   }
 
   header.main-header .logo-brand-img,
-  header.main-header .logo img {
-    width: 42px !important;
-    height: 42px !important;
-    border-radius: 10px !important;
-  }
-
+  header.main-header .logo img,
   header.main-header.scrolled .logo-brand-img,
   header.main-header.scrolled .logo img {
     width: 38px !important;
@@ -689,49 +680,12 @@ html, body { overflow-x: hidden; }
 
   header.main-header nav.nav-links.drawer-active,
   header.main-header.scrolled nav.nav-links.drawer-active {
-    top: 76px !important;
+    top: 80px !important;
     left: 8px !important;
     right: 8px !important;
     bottom: auto !important;
-    max-height: calc(100dvh - 88px) !important;
-  }
-}
-
-@media (max-width: 480px) {
-  header.main-header .logo-text,
-  header.main-header.scrolled .logo-text {
-    max-width: 176px !important;
-    font-size: 0.7rem !important;
-  }
-}
-
-/* Remove rounded scroll header on mobile/tablet too. */
-@media (max-width: 1024px) {
-  header.main-header,
-  header.main-header.scrolled,
-  header.main-header:not(.scrolled) {
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    width: 100% !important;
-    transform: none !important;
-    border-radius: 0 !important;
-    border: 0 !important;
-    border-bottom: 1px solid rgba(15, 23, 42, 0.08) !important;
-    background: rgba(255, 255, 255, 0.96) !important;
-    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05) !important;
-  }
-
-  header.main-header .nav-container,
-  header.main-header.scrolled .nav-container {
-    height: 64px !important;
-    padding: 0 !important;
-  }
-
-  header.main-header nav.nav-links.drawer-active,
-  header.main-header.scrolled nav.nav-links.drawer-active {
-    top: 70px !important;
-    left: 8px !important;
-    right: 8px !important;
+    max-height: calc(100dvh - 92px) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15) !important;
   }
 }
