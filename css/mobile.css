@@ -4,7 +4,7 @@
    ═══════════════════════════════════════════════════════════ */
 
 /* ── GLOBAL (applies all screen sizes — safe only rules) ── */
-*, *::before, *::after { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 html, body { overflow-x: hidden; }
 
 /* ═══════════════════════
@@ -247,6 +247,14 @@ html, body { overflow-x: hidden; }
     gap: 24px !important;
   }
 
+  .main-footer .logo-text {
+    max-width: none !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    white-space: normal !important;
+    font-size: 0.95rem !important;
+  }
+
   .footer-bottom {
     flex-direction: column !important;
     text-align: center !important;
@@ -317,6 +325,7 @@ html, body { overflow-x: hidden; }
 
   .section-title { font-size: 1.3rem !important; }
   .theater-section h2 { font-size: 1.3rem !important; }
+  .detco-hero-title { font-size: 1.65rem !important; }
 }
 
 /* ═══════════════════════
@@ -1140,6 +1149,91 @@ html, body { overflow-x: hidden; }
   .theater-hud-right svg {
     width: 10px !important;
     height: 10px !important;
+  }
+
+  /* 11. DETCO Own Brand Page (detco.html) Responsive Adjustments */
+  .detco-hero {
+    padding: 120px 0 50px 0 !important;
+  }
+  .detco-hero-title {
+    font-size: 1.85rem !important;
+    letter-spacing: -0.5px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 12px !important;
+  }
+  .detco-hero-desc {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+    max-width: 100% !important;
+  }
+  .detco-hero-badge {
+    font-size: 0.62rem !important;
+    padding: 4px 10px !important;
+    margin-bottom: 16px !important;
+  }
+  .detco-grid-section {
+    padding: 40px 0 !important;
+  }
+  .detco-products-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    margin-top: 24px !important;
+    margin-bottom: 40px !important;
+  }
+  .category-header-panel {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+    padding: 18px 20px !important;
+    margin-top: 30px !important;
+    margin-bottom: 24px !important;
+  }
+  .category-header-panel:first-of-type {
+    margin-top: 0 !important;
+  }
+  .category-title {
+    font-size: 1.35rem !important;
+    margin-bottom: 4px !important;
+  }
+  .category-desc {
+    font-size: 0.8rem !important;
+  }
+  .category-count-badge {
+    font-size: 0.72rem !important;
+    padding: 6px 12px !important;
+  }
+  .detco-card-img-box {
+    height: 220px !important;
+    padding: 20px !important;
+  }
+  .detco-card-body {
+    padding: 20px 18px 18px 18px !important;
+  }
+  .detco-card-title {
+    font-size: 1.1rem !important;
+    margin-bottom: 8px !important;
+  }
+  .detco-card-desc {
+    font-size: 0.8rem !important;
+    margin-bottom: 16px !important;
+    line-height: 1.5 !important;
+  }
+  .detco-card-moq {
+    padding: 10px 14px !important;
+    margin-bottom: 16px !important;
+    font-size: 0.78rem !important;
+    gap: 6px !important;
+  }
+  .detco-card-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+  .detco-card-actions .btn {
+    width: 100% !important;
+    padding: 10px 12px !important;
+    font-size: 0.75rem !important;
+    height: 38px !important;
   }
 }
 
