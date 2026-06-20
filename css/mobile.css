@@ -1237,3 +1237,101 @@ html, body { overflow-x: hidden; }
   }
 }
 
+/* --- High-Conversion B2B Modal Mobile Optimization --- */
+@media (max-width: 480px) {
+  /* Center modal and make it fit nicely */
+  .modal-overlay {
+    padding: 8px !important;
+  }
+  .modal-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    max-height: calc(100vh - 16px) !important;
+    border-radius: 12px !important;
+  }
+  
+  /* Header adjustments */
+  .modal-header {
+    padding: 10px 14px !important;
+    gap: 8px !important;
+  }
+  .modal-header div[style*="display: flex"] {
+    gap: 8px !important;
+  }
+  .modal-header img {
+    height: 28px !important;
+    width: 28px !important;
+    min-width: 28px !important;
+    min-height: 28px !important;
+  }
+  .modal-title {
+    font-size: 0.92rem !important;
+    font-weight: 800 !important;
+    line-height: 1.2 !important;
+  }
+  .modal-header-desc {
+    font-size: 0.65rem !important;
+    line-height: 1.1 !important;
+  }
+  .btn-close-modal {
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+    min-height: 28px !important;
+  }
+  .btn-close-modal svg {
+    width: 12px !important;
+    height: 12px !important;
+  }
+  
+  /* Body and spacing adjustments */
+  .modal-body {
+    padding: 12px 14px !important;
+  }
+  .enquiry-form {
+    gap: 10px !important;
+  }
+  .form-row-double {
+    gap: 8px !important;
+  }
+  .form-group {
+    gap: 3px !important;
+  }
+  .form-group label {
+    font-size: 0.64rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.3px !important;
+    margin-bottom: 1px !important;
+  }
+  
+  /* Input fields padding and typography */
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 0.78rem !important;
+    padding: 6px 10px !important;
+    height: 34px !important;
+    border-radius: 6px !important;
+  }
+  .form-group textarea {
+    height: 64px !important;
+    min-height: 64px !important;
+    padding-top: 6px !important;
+    resize: vertical !important;
+  }
+  
+  /* Submit button optimization */
+  .submit-btn-wrap {
+    margin-top: 4px !important;
+  }
+  .modal-container button[type="submit"],
+  .btn-submit-enquiry {
+    padding: 10px !important;
+    font-size: 0.8rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.5px !important;
+    border-radius: 8px !important;
+  }
+}
+

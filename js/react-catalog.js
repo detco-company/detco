@@ -372,9 +372,7 @@ function ReactCatalogApp() {
                           <a href={`product.html?id=${prod.id}`} className="product-card-link" style={{ display: "block", width: "100%", height: "100%" }}>
                             <img src={prod.image} alt={prod.name} loading="lazy" />
                           </a>
-                          <div className="card-badges">
-                            {prod.isAuthorized3MPartner && <span className="badge-pill partner-label">3M Partner</span>}
-                          </div>
+                          {/* No badges needed in roadmap recommendations */}
                         </div>
                         <div className="product-body">
                           <span className="product-cat" style={{ textTransform: "uppercase" }}>{prod.brand}</span>
@@ -547,7 +545,6 @@ function ReactCatalogApp() {
                     <img src={prod.image} alt={prod.name} loading="lazy" />
                   </a>
                   <div className="card-badges">
-                    {prod.isAuthorized3MPartner && <span className="badge-pill partner-label">3M Partner</span>}
                     {prod.isBestSeller && <span className="badge-pill hot">Best Seller</span>}
                   </div>
                 </div>

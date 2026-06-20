@@ -455,7 +455,6 @@ document.addEventListener('DOMContentLoaded', () => {
             <img src="${product.image}" alt="${product.name}" loading="lazy" />
           </a>
           <div class="card-badges">
-            ${product.isAuthorized3MPartner ? '<span class="badge-pill partner-label">3M Partner</span>' : ''}
             ${product.isBestSeller ? '<span class="badge-pill hot">Best Seller</span>' : ''}
           </div>
         </div>

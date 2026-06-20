@@ -19,38 +19,8 @@ function initAwwwardsEngine() {
 
   const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || window.innerWidth < 1025;
 
-  // 1. Initialize Lenis Smooth Scroll (only on non-touch devices)
+  // 1. Initialize Lenis Smooth Scroll - DISABLED for normal native scroll
   let lenisInstance = null;
-  if (!isTouch && typeof Lenis !== 'undefined') {
-    lenisInstance = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-      infinite: false
-    });
-    window.lenisInstance = lenisInstance;
-
-    function raf(time) {
-      lenisInstance.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
-    // Sync with ScrollTrigger
-    if (typeof ScrollTrigger !== 'undefined') {
-      lenisInstance.on('scroll', (e) => {
-        ScrollTrigger.update();
-      });
-      gsap.ticker.add((time) => {
-        lenisInstance.raf(time * 1000);
-      });
-      gsap.ticker.lagSmoothing(0);
-    } else {
-      lenisInstance.on('scroll', () => {
-        // No header class toggling needed for permanent curved header
-      });
-    }
-  }
 
   // Register ScrollTrigger if available
   if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
