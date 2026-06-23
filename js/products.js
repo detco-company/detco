@@ -899,6 +899,52 @@ const products = [
   },
 
   // ==================== 5. RETROREFLECTIVE TRAFFIC SIGN BOARDS (sign-boards) ====================
+  {
+    id: "prod-eurobond-acp-sign",
+    views: 1250,
+    likes: 310,
+    brand: "eurobond",
+    name: "Eurobond Premium Aluminium Composite Sign Board Panel",
+    category: "sign-boards",
+    image: "assets/sign_boards.png",
+    description: "Premium heavy-duty Aluminium Composite Panel (ACP) sign board manufactured by Eurobond. Features highly rigid dual aluminium skins with a polyethylene core, laminated with 3M retroreflective safety sheeting for NHAI national highway directions and municipal warning signages.",
+    isAuthorized3MPartner: false,
+    trustBadge: "Authorized Distributor",
+    isBestSeller: true,
+    moq: 10,
+    specs: {
+      "Panel Thickness": "3 mm / 4 mm",
+      "Aluminium Skin": "0.25 mm / 0.30 mm Alloy 3003/5005",
+      "Core Material": "LDPE / FR (Fire Retardant) Core",
+      "Retroreflective Sheeting": "3M HIP / Diamond Grade Type XI",
+      "Standard Compliance": "IRC 67 Compliant, MORTH Specifications",
+      "Dimensions": "Custom Sizes (e.g. 600x600mm, 900x900mm, 1200x900mm)",
+      "Features": "Excellent flatness, high rigidity, extreme weather & corrosion resistance"
+    }
+  },
+  {
+    id: "prod-eurobond-retroreflective-sign",
+    views: 890,
+    likes: 185,
+    brand: "eurobond",
+    name: "Eurobond Retroreflective Direction Sign Board",
+    category: "sign-boards",
+    image: "assets/usage_sign_boards.png",
+    description: "High-conspicuity retroreflective highway direction sign board mounted on premium Eurobond ACP panels. Designed for maximum daytime and nighttime visibility under weather-stressed road environments. Engineered with weather-resistant finishes and high tensile strength.",
+    isAuthorized3MPartner: false,
+    trustBadge: "Authorized Distributor",
+    isBestSeller: false,
+    moq: 5,
+    specs: {
+      "Sign Type": "Directional / Regulatory / Warning Signs",
+      "ACP Substrate": "Eurobond Sign Board Panel (3mm)",
+      "Reflective Sheeting": "3M Diamond Grade / High Intensity Prismatic",
+      "Weather Resistance": "UV stabilized & waterproof outer coating",
+      "Mounting Frame": "High strength galvanized iron (GI) framework",
+      "Standard Compliance": "IRC 67 & MORTH Standard Compliant",
+      "Lifespan": "Up to 7 - 10 years warranty on sheeting reflectivity"
+    }
+  },
 
 
   // ==================== 6. THERMOPLASTIC ROAD MARKING PAINT (marking-paint) ====================

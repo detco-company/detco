@@ -126,7 +126,8 @@ document.addEventListener('DOMContentLoaded', () => {
     { id: 'darkeye', name: 'Dark Eye', tagline: 'High-Performance Studs' },
     { id: 'nilkamal', name: 'Nilkamal', tagline: 'Quality Utility Cones' },
     { id: 'kataline', name: 'Kataline', tagline: 'Paint & Speed Breakers' },
-    { id: 'swarco', name: 'Swarco', tagline: 'Premium Reflective Beads' }
+    { id: 'swarco', name: 'Swarco', tagline: 'Premium Reflective Beads' },
+    { id: 'eurobond', name: 'Eurobond', tagline: 'Aluminium Composite Panels' }
   ];
 
   const categoryNames = {
@@ -355,7 +356,8 @@ document.addEventListener('DOMContentLoaded', () => {
           'kataline': 'Kataline Road Marking Equipment',
           'darkeye': 'Dark-Eye High-Performance Studs',
           'nilkamal': 'Nilkamal Quality Utility Cones',
-          'detco': 'DETCO Quality Road Safety Solutions'
+          'detco': 'DETCO Quality Road Safety Solutions',
+          'eurobond': 'Eurobond Aluminium Composite Panels'
         };
         const brandDisplayName = brandNames[activeBrand] || activeBrand.toUpperCase();
         
